@@ -1,0 +1,14 @@
+{
+  "name": "escuela",
+  "version": "1.0.0",
+  "description": "Proyecto Final",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Carlos Eduardo Mendoza Juárez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
