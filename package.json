@@ -1,14 +1,28 @@
 {
-  "name": "escuela",
+  "name": "Institucion Educativa",
   "version": "1.0.0",
-  "description": "Proyecto Final",
+  "description": "Final Project",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CsMendza/Escuela.git"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ],
   "author": "Carlos Eduardo Mendoza Juárez",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CsMendza/Escuela/issues"
+  },
+  "homepage": "https://github.com/CsMendza/Escuela#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
   }
 }
