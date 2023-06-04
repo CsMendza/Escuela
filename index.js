@@ -1,20 +1,35 @@
+//Dependencias
+const morgan = require('morgan');
 const express = require('express');
 const app = express();
-const pokedex = require('.poke.json');
+//Routes
+const Historial = require('./routes/Historial');
+const Alumno = require('./routes/Alumno');
+const Maestro = require('./routes/Maestro');
+const Datos = require('./routes/Datos');
+//middleware
+const auth = require('./middleware/auth');
+const notFound = require('./middleware/notFound');
+const index = require('./middleware/index');
+const cors = require('./middleware/cors');
 
 
+app.use(cors);
+app.use(morgan('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true}));
 
-app.get("/", (req, res, next) => {
-    const pokemon = pokedex.pokemon; //el .pokemon es porque es la primera llave
-    res.send(pokemon);
-}) 
+app.get("/", index);
 
-app.get("/:name", (req, res, next) => {  //Cuando le ponemos diagonal en el get es para dirigirnos a la siguiente pagina
-    res.status(200)                                             //req = request o peticion, el dato que nos va a estar enviando el usuario
-    console.log(req.params.name);
-    res.send("Estas en la pagina Nombre");
-});
+app.use("/Datos", Datos);
+app.use("/Maestro", Maestro);
+app.use("/Alumno", Alumno);
+app.use(auth);
+app.use("/Historial", Historial);
+app.use(notFound);
 
 app.listen(process.env.PORT || 3000, () => { 
     console.log("Server is running...");
 });
+
+//req = request o peticion 
