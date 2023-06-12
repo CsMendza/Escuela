@@ -64,7 +64,7 @@ function displayDatos(Datos) {
     var tbody = document.createElement("tbody");
   
     // Crear encabezados de columna
-    var headers = ["Nombre(s)", "Apellidos", "Grado", "Domicilio", "Teléfono"];
+    var headers = ["Expediente", "Nombre(s)", "Apellidos", "Grado", "Grupo", "Domicilio", "Teléfono", "Fecha Nacimiento"];
     var headerRow = document.createElement("tr");
     headers.forEach(function (headerText) {
       var headerCell = document.createElement("th");
@@ -77,7 +77,7 @@ function displayDatos(Datos) {
     // Agregar filas de datos
     Datos.forEach(function (alumno) {
       var row = document.createElement("tr");
-      var dataValues = [alumno.Nombre, alumno.Apellidos, alumno.Grado, alumno.Domicilio, alumno.Telefono];
+      var dataValues = [alumno.Expediente, alumno.Nombre, alumno.Apellidos, alumno.Grado, alumno.Grupo, alumno.Domicilio, alumno.Telefono, formatDate(alumno.FechaNac)];
       dataValues.forEach(function (value) {
         var cell = document.createElement("td");
         cell.textContent = value;
@@ -91,5 +91,12 @@ function displayDatos(Datos) {
     body.appendChild(tableContainer);
   }
   
+  function formatDate(dateString) {
+    var date = new Date(dateString);
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
+    return day + '/' + month + '/' + year;
+  }
   
 

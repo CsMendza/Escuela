@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Agregar Maestro</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/registroM.js"></script>
+    <link rel="stylesheet" href="./diseño/styleadmin.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">Instituto Educativo Miguel Hidalgo</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-6 offset-3">
+                <h1>Registro para Maestros</h1>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-6 offset-3">
+                <div class="form-group">
+                    <label for="Nombre">Nombre(s)</label>
+                    <input type="text" class="form-control" id="input-name" placeholder="">
+                    <small class="form-text text-muted">Nombre(s) del Docente</small>
+                </div>
+                <div class="form-group">
+                    <label for="Apellido">Apellidos</label>
+                    <input type="text" class="form-control" id="input-lname" placeholder="">
+                    <small class="form-text text-muted">Apellidos del Docente</small>
+                </div>
+                <div class="form-group">
+                    <label for="Telefono">Telefono</label>
+                    <input type="number" class="form-control" id="input-phone" placeholder="">
+                    <small class="form-text text-muted">Número Telefonico del Docente</small>
+                </div>
+                <div class="form-group">
+                    <label for="Domicilio">Domicilio</label>
+                    <input type="text" class="form-control" id="input-direction" placeholder="">
+                    <small class="form-text text-muted">Direccion del Docente</small>
+                </div>
+                <div class="form-group">
+                    <label for="fecha-nacimiento">Fecha de Nacimiento</label>
+                    <input type="date" class="form-control" id="input-Nac" placeholder="">
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button class="btn btn-primary">Registrar Maestro</button>
+                </div>
+                <br>
+                <div class="d-flex justify-content-between">
+                    <button class="btn btn-salir">Salir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

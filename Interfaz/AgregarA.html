@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Agregar Alumno</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/registro.js"></script>
+    <link rel="stylesheet" href="./diseño/styleadmin.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">Instituto Educativo Miguel Hidalgo</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-6 offset-3">
+                <h1>Registro</h1>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-6 offset-3">
+                <div class="form-group">
+                    <label for="Nombre">Nombre(s)</label>
+                    <input type="text" class="form-control" id="input-name" placeholder="">
+                    <small class="form-text text-muted">Nombre(s) del Alumno</small>
+                </div>
+                <div class="form-group">
+                    <label for="Apellido">Apellidos</label>
+                    <input type="text" class="form-control" id="input-lname" placeholder="">
+                    <small class="form-text text-muted">Apellidos del Alumono</small>
+                </div>
+                <div class="form-group">
+                    <label for="Grado">Grado</label>
+                    <select class="form-control" id="input-grade">
+                      <option value="">Seleccionar grado</option>
+                      <option value="1">1 grado</option>
+                      <option value="2">2 grado</option>
+                      <option value="3">3 grado</option>
+                    </select>
+                    <small class="form-text text-muted">Selecciona el grado del alumno</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="Grado">Grupo</label>
+                    <select class="form-control" id="input-grupo">
+                      <option value="">Seleccionar grupo</option>
+                      <option value="Matutino">Matutino</option>
+                      <option value="Vespertino">Vespertino</option>
+                    </select>
+                    <small class="form-text text-muted">Selecciona el grado del alumno</small>
+                  </div>
+                  
+                <div class="form-group">
+                    <label for="Telefono">Telefono</label>
+                    <input type="number" class="form-control" id="input-phone" placeholder="">
+                    <small class="form-text text-muted">Tu numero de celular</small>
+                </div>
+                <div class="form-group">
+                    <label for="Domicilio">Domicilio</label>
+                    <input type="text" class="form-control" id="input-direction" placeholder="">
+                    <small class="form-text text-muted">Direccion del Alumno</small>
+                </div>
+                <div class="form-group">
+                    <label for="fecha-nacimiento">Fecha de Nacimiento</label>
+                    <input type="date" class="form-control" id="input-Nac" placeholder="">
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button class="btn btn-primary">Registrar Alumno</button>
+                </div>
+                <br>
+                <div class="d-flex justify-content-between">
+                    <button class="btn btn-salir">Regresar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

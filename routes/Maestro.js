@@ -20,15 +20,15 @@ Maestro.post("/", async (req, res, next) => {
 });//crear Maestros
 
 Maestro.post("/login", async(req, res, next) =>{
-    const {ExpedienteM, ContraseñaM} = req.body;
-    const query = `SELECT * FROM maestros WHERE ExpedienteM = '${ExpedienteM}' AND ContraseñaM = '${ContraseñaM}';`;
+    const {Expediente, Contraseña} = req.body;
+    const query = `SELECT * FROM datosm WHERE Expediente = '${Expediente}' AND Contraseña = '${Contraseña}';`;
     const rows = await db.query(query);
 
-    if(ExpedienteM && ContraseñaM){
+    if(Expediente && Contraseña){
         if(rows.length == 1){
             const token = jwt.sign({
-                Maestro_id: rows[0].Maestro_id,
-                ExpedienteM: rows[0].ExpedienteM
+                Expediente: rows[0].Expediente,
+                Contraseña: rows[0].Contraseña
             }, "debugkey");
             return res.status(200).json({ code: 200, message: token});
         }
@@ -38,13 +38,12 @@ Maestro.post("/login", async(req, res, next) =>{
     }
     return res.status(500).json({code:500, message: "Incompleto"});
 
-})
+});
 
-Maestro.get("/", async(req, res, next) => {
-    const query = "SELECT * FROM maestros";
-    const rows = await db.query(query);
 
-    return res.status(200).json({ code: 200, message: rows});
-});//Ver alumnos
+Maestro.get("/",async(req, res, next)=>{
+    const emp = await db.query("SELECT * FROM alumnos");
+    return res.status(200).json({code: 1, message: emp});
+});
 
 module.exports = Maestro;

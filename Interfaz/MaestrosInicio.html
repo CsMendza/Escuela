@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Docente</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/loginM.js"></script>
+    <link rel="stylesheet" href="./diseño/styleadmin.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="#">Instituto Educativo Miguel Hidalgo</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-6 offset-3">
+                <h1>Bienvenido Maestro</h1>
+            </div>
+            <div class="salir justify-content-between">
+                <button class="btn btn-salir">Salir</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.btn-salir').addEventListener('click', function(){
+            localStorage.clear();
+            window.location.href = "loginM.html";
+        });
+
+    </script>
+</body>
+</html>

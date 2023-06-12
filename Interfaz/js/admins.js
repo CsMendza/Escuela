@@ -3,17 +3,13 @@ window.onload = init;
 function init() {
     if(!localStorage.getItem("token")){
         document.querySelector('.btn-secondary').addEventListener('click', function(){
-            window.location.href = "loginM.html"
-        });
-
-        document.querySelector('.btn-3').addEventListener('click', function(){
-            window.location.href = "AdminsLog.html"
+            window.location.href = "index.html"
         });
     
         document.querySelector('.btn-primary').addEventListener('click', login);
     }
     else{
-        window.location.href = "inicio.html";
+        window.location.href = "admins.html";
     }
     
 }
@@ -25,15 +21,15 @@ function login(){
     console.log(mail, pass);
     axios({
         method: 'post' ,
-        url: 'http://localhost:3000/Alumno/login',
+        url: 'http://localhost:3000/Admin/login',
         data: {
-            Expediente: mail,
+            Correo: mail,
             Contraseña: pass
         }
     }).then(function(res){
         if(res.data.code === 200){
             localStorage.setItem("token", res.data.message);
-            window.location.href = "inicio.html";
+            window.location.href = "admins.html";
         }
         else{
             alert("Usuario y/o Contraseña Incorrectos");

@@ -3,10 +3,10 @@ const morgan = require('morgan');
 const express = require('express');
 const app = express();
 //Routes
-const Historial = require('./routes/Historial');
+const Admin = require('./routes/Admin')
 const Alumno = require('./routes/Alumno');
 const Maestro = require('./routes/Maestro');
-const Datos = require('./routes/Datos');
+const registro = require('./routes/registro');
 //middleware
 const auth = require('./middleware/auth');
 const notFound = require('./middleware/notFound');
@@ -21,11 +21,11 @@ app.use(express.urlencoded({ extended: true}));
 
 app.get("/", index);
 
-app.use("/Datos", Datos);
+app.use("/registro", registro);
+app.use("/Admin", Admin);
 app.use("/Maestro", Maestro);
 app.use("/Alumno", Alumno);
 app.use(auth);
-app.use("/Historial", Historial);
 app.use(notFound);
 
 app.listen(process.env.PORT || 3000, () => { 
