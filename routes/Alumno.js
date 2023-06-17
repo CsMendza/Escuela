@@ -66,7 +66,7 @@ Alumno.post("/Maestro", async (req, res, next) => {
     return res.status(500).json({ code: 500, message: "Incompleto" });
 });//Crear Maestro
 
-Alumno.put("/Alumno", async (req, res, next) => {
+/*Alumno.put("/Alumno", async (req, res, next) => {
     const { nombre, Apellidos, Grado, Grupo, Telefono, Domicilio, FechaNac } = req.body;
   
     if (nombre && Apellidos && Grado && Grupo && Telefono && Domicilio && FechaNac) {
@@ -79,7 +79,7 @@ Alumno.put("/Alumno", async (req, res, next) => {
       return res.status(500).json({ code: 500, message: "Ocurrió un error" });
     }
     return res.status(500).json({ code: 500, message: "Campos incompletos" });
-  });
+  });*/
   
 /*Alumno.post("/Maestro", async (req, res, next) => {
     const {Nombre, Apellidos, Telefono, Domicilio, FechaNac} = req.body
@@ -127,7 +127,7 @@ Alumno.get("/", async(req, res, next) => {
 });//Ver alumnos
 
 Alumno.get("/Grado", async(req, res, next) => {
-    const query = "SELECT * FROM materias";
+    const query = "SELECT * FROM materias WHERE idMateria = 1";
     const rows = await db.query(query);
 
     return res.status(200).json({ code: 200, message: rows});

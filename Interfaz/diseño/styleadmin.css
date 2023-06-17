@@ -1,92 +1,109 @@
+body {
+background-color: #f5f5f5;
+}
 /* Estilos para la barra de navegación */
 .navbar {
-    text-align: center;
-    background-color: #177881;
-    color: black;
-    padding: 10px;
-    border-radius: 5px; 
+  text-align: center;
+  background-color: #177881;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .navbar-brand {
-    font-size: 30px;
-    font-weight: bold;
-    color: #fff;
-    text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
 }
 
-.header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-/**/
-.btn-salir {
-  display: block;
-  margin: 0 auto; /* Aplica margen automático en los lados izquierdo y derecho para centrar horizontalmente */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/**/
+/* CSS del container */
 .container {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 20px;
-  }
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-  .row{
+
+/* Estilos para el contenido principal */
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: gray;
+  padding: 20px 0;
+  text-align: center;
+  position: absolute; /* Agregado */
+  bottom: 0; /* Agregado */
+  left: 0; /* Agregado */
+  width: 100%; /* Agregado */
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+  color: white;
+}
+/*Titulos*/
+.titles{
+  text-align: center;
+}
+/* Estilos para botones */
+.d-flex{
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  background-color: #177881;
+  height: 45px;
+  margin: 5px 5px;
+  text-align: center;
+  font-size: 15px; /* Aumenta el tamaño del texto de los botones */
+  flex: 1;
+}
+
+.btnexit {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  background-color: #dc3545;
+  text-align: center;
+  font-size: 18px; /* Aumenta el tamaño del texto de los botones */
+}
+
+.salir{
     display: flex;
     justify-content: center;
-    align-items: center;
-  }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input[type="email"],
-  input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .small-text {
-    font-size: 12px;
-    color: #888;
-  }
-  
-  .d-flex {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .btn-primary {
-    background-color: #007bff;
-  }
-  
-  .btn-salir {
-    background-color: green;
+}
 
-  }
+.form-group{
+  border-top: 100px;
+  height: 100px;
+}
+
+.form-control{
+  width: 100%;
+  height: 35px;
+}
   
   /*Dise;o a la tablas*/
 

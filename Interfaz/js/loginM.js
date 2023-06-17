@@ -9,7 +9,8 @@ function init() {
                 'Authorization': "Bearer " + localStorage.getItem("token")
             }
         }
-        loadAlumnos();
+        loadMaterias();
+        loadCalificaciones();
     }
     document.querySelector('.btn-secondary').addEventListener('click', function(){
         localStorage.clear();
@@ -64,7 +65,7 @@ function displayDatos(Datos) {
     var tbody = document.createElement("tbody");
   
     // Crear encabezados de columna
-    var headers = ["Nombre(s)", "Apellidos", "Grado", "Domicilio", "Teléfono"];
+    var headers = ["Nombre(s)", "Apellidos", "Grado", "Grupo"];
     var headerRow = document.createElement("tr");
     headers.forEach(function (headerText) {
       var headerCell = document.createElement("th");
@@ -77,7 +78,7 @@ function displayDatos(Datos) {
     // Agregar filas de datos
     Datos.forEach(function (alumno) {
       var row = document.createElement("tr");
-      var dataValues = [alumno.Nombre, alumno.Apellidos, alumno.Grado, alumno.Domicilio, alumno.Telefono];
+      var dataValues = [alumno.Nombre, alumno.Apellidos, alumno.Grado, alumno.Grupo];
       dataValues.forEach(function (value) {
         var cell = document.createElement("td");
         cell.textContent = value;
@@ -92,4 +93,64 @@ function displayDatos(Datos) {
   }
   
   
+  function loadMaterias(){
+    axios.get(url + "/Maestro/Materias", Headers)
+    .then(function(res){
+        displayMaterias(res.data.message);
+    }).catch(function(err){
+    })
+}
+
+function displayMaterias(Datos){
+    var body = document.querySelector("body");
+  
+    // Crear el contenedor de la tabla
+    var tableContainer = document.createElement("div");
+    tableContainer.classList.add("table-container");
+  
+    // Crear la tabla
+    var table = document.createElement("table");
+    var thead = document.createElement("thead");
+    var tbody = document.createElement("tbody");
+  
+    // Crear encabezados de columna
+    var headers = ["Expediente","Nombre(s)", "Apellidos", "Grado", "Grupo", "Calificación"];
+    var headerRow = document.createElement("tr");
+    headers.forEach(function (headerText) {
+      var headerCell = document.createElement("th");
+      headerCell.textContent = headerText;
+      headerRow.appendChild(headerCell);
+    });
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+  
+    // Agregar filas de datos
+    Datos.forEach(function (alumno) {
+      var row = document.createElement("tr");
+      var dataValues = [alumno.Expediente,alumno.Nombre, alumno.Apellidos, alumno.Grado, alumno.Grupo];
+      dataValues.forEach(function (value) {
+        var cell = document.createElement("td");
+        cell.textContent = value;
+        row.appendChild(cell);
+      });
+
+      var buttonCell = document.createElement("td");
+      var button = document.createElement("button");
+      button.textContent = "Asignar calificaciones";
+      button.onclick = function () {
+        // Redirigir a otra página
+        window.location.href = "calificaciones.html";
+      };
+
+
+      buttonCell.appendChild(button);
+      row.appendChild(buttonCell);
+
+      tbody.appendChild(row);
+    });
+  
+    table.appendChild(tbody);
+    tableContainer.appendChild(table);
+    body.appendChild(tableContainer); 
+}
 

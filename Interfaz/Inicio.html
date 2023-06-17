@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instituto Educativo</title>
-    <link rel="stylesheet" href="./diseño/style.css">
+    <title>Portal de Alumnos - Instituto Educativo</title>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./js/inicio.js"></script>
+    <link rel="stylesheet" href="./diseño/style.css">
 </head>
 <body>
     <nav class="navbar">
@@ -17,10 +17,11 @@
     </nav>
 
     <div class="container">
-        <div class="row mt-5">
-            <div class="col-10 offset-2">
-                <h1>Bienvenido al portal de la Escuela</h1>
-            </div>
+        <div class="header">
+            <h1>Materias</h1>
+        </div>
+        <div class="salir justify-content-between">
+            <button class="btn btnexit">Salir</button>
         </div>
     </div>
 
@@ -28,10 +29,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <p></p>
+                    <p>Todos los derechos reservados &copy; 2023 Instituto Educativo Miguel Hidalgo</p>
                 </div>
             </div>
         </div>
     </footer>
+    <script>
+        document.querySelector('.btnexit').addEventListener('click', function(){
+            localStorage.clear();
+            window.location.href = "loginM.html";
+        });
+
+    </script>
 </body>
 </html>
+

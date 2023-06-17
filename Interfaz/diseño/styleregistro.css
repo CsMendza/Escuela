@@ -43,12 +43,16 @@ h1 {
 
 footer {
     background-color: gray;
-    padding: 10px 0;
+    padding: 20px 0;
     text-align: center;
-    position: absolute; /* Agregado */
-    bottom: 0; /* Agregado */
-    left: 0; /* Agregado */
-    width: 100%; /* Agregado */
+    position: relative;
+    /* Agregado */
+    bottom: 0;
+    /* Agregado */
+    left: 0;
+    /* Agregado */
+    width: 100%;
+    /* Agregado */
 }
 
 footer p {
@@ -57,22 +61,15 @@ footer p {
     color: white;
 }
 
+/*Titulos*/
+.titles {
+    text-align: center;
+}
+
 /* Estilos para botones */
-.d-flex{
+.d-flex {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
-    gap: 10px;
-}
-.d-flex1{
-    display: flex;
-    justify-content: center;
-}
-.d-flex2{
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    gap: 10px;
 }
 
 .btn {
@@ -83,23 +80,11 @@ footer p {
     cursor: pointer;
     background-color: #177881;
     height: 45px;
-    margin: 10px 35px;
+    margin: 5px 5px;
     text-align: center;
-    font-size: 15px; /* Aumenta el tamaño del texto de los botones */
+    font-size: 15px;
+    /* Aumenta el tamaño del texto de los botones */
     flex: 1;
-}
-
-.btn1{
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    cursor: pointer;
-    background-color:#177881;
-    margin-top: 10px;
-    text-align: center;
-    font-size: 18px; /* Aumenta el tamaño del texto de los botones */
-    width: 50%; /* Asegura que los botones ocupen todo el ancho disponible */
 }
 
 .btnexit {
@@ -110,44 +95,45 @@ footer p {
     cursor: pointer;
     background-color: #dc3545;
     text-align: center;
-    font-size: 18px; /* Aumenta el tamaño del texto de los botones */
+    font-size: 18px;
+    /* Aumenta el tamaño del texto de los botones */
 }
 
-.salir{
+.salir {
     display: flex;
     justify-content: center;
 }
 
-.form-group{
+.form-group {
     border-top: 100px;
     height: 100px;
 }
 
-.form-control{
+.form-control {
     width: 100%;
     height: 35px;
 }
 
- /*Dise;o a la tablas*/
+/*Dise;o a la tablas*/
 
- .table-container {
+.table-container {
     margin-left: 100px;
     margin-right: 100px;
-  }
-  
-  .table-container table {
+}
+
+.table-container table {
     width: 100%;
     border-collapse: collapse;
     border: 1px solid #ddd;
-  }
-  
-  .table-container th,
-  .table-container td {
+}
+
+.table-container th,
+.table-container td {
     padding: 8px;
     text-align: center;
     border-bottom: 1px solid #ddd;
-  }
-  
-  .table-container th {
+}
+
+.table-container th {
     background-color: #f2f2f2;
-  }
+}
