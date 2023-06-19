@@ -10,7 +10,6 @@ function init() {
             }
         }
         loadMaterias();
-        loadCalificaciones();
     }
     document.querySelector('.btn-secondary').addEventListener('click', function(){
         localStorage.clear();

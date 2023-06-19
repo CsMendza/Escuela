@@ -24,4 +24,16 @@ Admin.post("/login", async(req, res, next) =>{
 
 });
 
+Admin.get("/Alumnos",async(req, res, next)=>{
+    const alm = await db.query("SELECT * FROM alumnos");
+    return res.status(200).json({code: 1, message: alm});
+});
+
+Admin.get("/Maestros",async(req, res, next)=>{
+    const alm = await db.query("SELECT * FROM maestros");
+    return res.status(200).json({code: 1, message: alm});
+});
+
+
+
 module.exports = Admin;

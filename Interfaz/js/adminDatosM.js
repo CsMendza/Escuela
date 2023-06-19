@@ -3,56 +3,26 @@ var Headers = {};
 var url = "http://localhost:3000";
 
 function init() {
-    if (localStorage.getItem("token")) {
-        Headers = {
-            Headers: {
-                'Authorization': "Bearer " + localStorage.getItem("token")
-            }
-        }
-        loadAlumnos();
+  if (localStorage.getItem("token")) {
+    Headers = {
+      Headers: {
+        'Authorization': "Bearer " + localStorage.getItem("token")
+      }
     }
-    document.querySelector('.btn-secondary').addEventListener('click', function () {
-        localStorage.clear();
-        window.location.href = "login.html"
-    });
-    document.querySelector('.btn-primary').addEventListener('click', login);
+    loadMaestros();
+  }
 }
 
-function login() {
-    var mail = document.getElementById('input-mail').value;
-    var pass = document.getElementById('input-password').value;
-
-    console.log(mail, pass);
-    axios({
-        method: 'post',
-        url: 'http://localhost:3000/Maestro/login',
-        data: {
-            Expediente: mail,
-            Contraseña: pass
-        }
-    }).then(function (res) {
-        if (res.data.code === 200) {
-            localStorage.setItem("token", res.data.message);
-            window.location.href = "MaestrosInicio.html";
-        }
-        else {
-            alert("Usuario y/o Contraseña Incorrectos");
-        }
-    }).catch(function (err) {
-        console.log(err);
-    })
-}
-
-function loadAlumnos() {
+function loadMaestros(){
     axios
-      .get(url + "/Maestro", Headers)
+      .get(url + "/Admin/Maestros", Headers)
       .then(function (res) {
-        displayDatos(res.data.message);
+        displayDatosM(res.data.message);
       })
-      .catch(function (err) {});
+      .catch(function (err) { });
   }
   
-  function displayDatos(Datos) {
+  function displayDatosM(Datos) {
     var body = document.querySelector("body");
   
     // Crear el contenedor de la tabla
@@ -69,8 +39,6 @@ function loadAlumnos() {
       "Expediente",
       "Nombre(s)",
       "Apellidos",
-      "Grado",
-      "Grupo",
       "Domicilio",
       "Teléfono",
       "Fecha Nacimiento",
@@ -91,8 +59,6 @@ function loadAlumnos() {
         alumno.Expediente,
         alumno.Nombre,
         alumno.Apellidos,
-        alumno.Grado,
-        alumno.Grupo,
         alumno.Domicilio,
         alumno.Telefono,
         formatDate(alumno.FechaNac),
@@ -118,4 +84,5 @@ function loadAlumnos() {
     return day + "/" + month + "/" + year;
   }
   
-
+  
+  

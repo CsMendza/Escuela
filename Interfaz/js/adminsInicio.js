@@ -23,20 +23,14 @@ function init(){
     document.querySelector('.btn-primary').addEventListener('click', function(){
         window.location.href = "AgregarA.html"
     });
-    document.querySelector('.btn-2').addEventListener('click', function(){
-        window.location.href = "EditarA.html"
-    });
     document.querySelector('.btn-3').addEventListener('click', function(){
         window.location.href = "AgregarM.html"
-    });
-    document.querySelector('.btn-4').addEventListener('click', function(){
-        window.location.href = "EditarM.html"
     });
     document.querySelector('.btn-5').addEventListener('click', function(){
         window.location.href = "AdminsAlumnos.html"
     });
     document.querySelector('.btn-6').addEventListener('click', function(){
-        window.location.href = "EditarM.html"
+        window.location.href = "AdminsMaestros.html"
     });
 
 

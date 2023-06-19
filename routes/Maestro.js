@@ -41,18 +41,15 @@ Maestro.post("/login", async(req, res, next) =>{
 });
 
 Maestro.get("/Materias", async(req, res, next) =>{
-    const mat = await db.query(`SELECT * FROM alumnos WHERE Grado = 1 AND Grupo = "Matutino" ;`);
+    const mat = await db.query(`SELECT * FROM alumnos WHERE Grado = 1;`);
     return res.status(200).json({code: 1, message: mat});
 });
 
 Maestro.get("/Calificaciones", async(req, res, next) =>{
-    const mat = await db.query(`SELECT * FROM materias WHERE idMateria = 1;`);
+    const mat = await db.query(`SELECT * FROM materias WHERE Grado = 1;`);
     return res.status(200).json({code: 1, message: mat});
 });
 
-Maestro.get("/",async(req, res, next)=>{
-    const alm = await db.query("SELECT * FROM alumnos");
-    return res.status(200).json({code: 1, message: alm});
-});
+
 
 module.exports = Maestro;
